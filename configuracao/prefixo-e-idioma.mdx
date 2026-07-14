@@ -1,0 +1,69 @@
+---
+title: "Prefixo e idioma: personalize a experiência do bot"
+sidebarTitle: "Prefixo e Idioma"
+description: "Altere o prefixo de comandos e o idioma de resposta do Atlas Bots para adaptar a experiência ao seu servidor Discord."
+---
+
+Cada servidor tem sua própria identidade, e o Atlas Bots permite que você adapte detalhes fundamentais da experiência — como o prefixo usado para acionar comandos de texto e o idioma em que o bot responde. Essas configurações são simples de alterar e entram em vigor imediatamente após salvas.
+
+## Alterando o prefixo
+
+O prefixo é o caractere ou conjunto de caracteres que antecede um comando de texto, como `!ban` ou `?perfil`. O padrão do Atlas Bots é `!`, mas você pode usar qualquer símbolo que preferir.
+
+<Steps>
+  <Step title="Acesse as configurações gerais">
+    No dashboard, clique em **Configurações Gerais** no menu lateral.
+  </Step>
+  <Step title="Localize o campo de prefixo">
+    Na seção **"Comandos"**, encontre o campo chamado **"Prefixo"**.
+  </Step>
+  <Step title="Digite o novo prefixo">
+    Apague o prefixo atual e insira o novo desejado. Exemplos comuns: `!`, `?`, `>>`, `-`, `.`. Evite usar caracteres que o Discord já reserva, como `@` ou `#`.
+  </Step>
+  <Step title="Salve a configuração">
+    Clique em **"Salvar"**. O novo prefixo passa a funcionar imediatamente em todos os canais do servidor.
+  </Step>
+</Steps>
+
+Você também pode alterar o prefixo diretamente pelo Discord usando o slash command:
+
+```
+/config prefixo [novo-prefixo]
+```
+
+Por exemplo: `/config prefixo >>` define `>>` como o novo prefixo do servidor.
+
+<Note>
+  Os slash commands (iniciados com `/`) **sempre funcionam** independentemente do prefixo configurado. Mesmo que você altere o prefixo para `>>`, comandos como `/ajuda`, `/ban` e `/perfil` continuarão funcionando normalmente. O prefixo afeta apenas os comandos de texto tradicional.
+</Note>
+
+## Alterando o idioma
+
+O Atlas Bots suporta múltiplos idiomas para suas respostas, embeds e mensagens automáticas. Ao mudar o idioma, todas as respostas do bot no servidor passam a usar o idioma selecionado — incluindo mensagens de erro, confirmações e notificações automáticas.
+
+**Idiomas disponíveis:**
+
+| Idioma | Código | Observação |
+|---|---|---|
+| Português Brasileiro | `pt-BR` | Idioma padrão de todos os servidores |
+| English | `en-US` | Inglês americano |
+| Español | `es-ES` | Espanhol europeu |
+
+<Steps>
+  <Step title="Acesse as configurações gerais">
+    No dashboard, clique em **Configurações Gerais** no menu lateral.
+  </Step>
+  <Step title="Localize o seletor de idioma">
+    Na seção **"Localização"**, encontre o campo **"Idioma do bot"**.
+  </Step>
+  <Step title="Selecione o idioma desejado">
+    Clique no menu suspenso e escolha entre **Português Brasileiro**, **English** ou **Español**.
+  </Step>
+  <Step title="Salve a configuração">
+    Clique em **"Salvar"**. O bot passará a responder no novo idioma imediatamente.
+  </Step>
+</Steps>
+
+<Tip>
+  Use o comando `/config ver` a qualquer momento para visualizar um resumo das configurações atuais do servidor, incluindo o prefixo ativo e o idioma configurado — sem precisar abrir o dashboard.
+</Tip>

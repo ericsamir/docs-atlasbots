@@ -1,0 +1,130 @@
+---
+title: "Punições: ban, kick, mute e warn no Discord"
+sidebarTitle: "Punições"
+description: "Use os comandos de punição do Atlas Bots para banir, kickar, mutar e advertir membros do seu servidor Discord com registro completo de histórico."
+---
+
+O sistema de punições do Atlas Bots centraliza todas as ações disciplinares do seu servidor em um único lugar, com registro automático de histórico para cada membro. Toda punição aplicada via comando — seja um simples aviso ou um banimento permanente — gera um protocolo único, é enviada ao canal de logs configurado e fica acessível para consulta a qualquer momento. Isso garante que toda a equipe de staff trabalhe com as mesmas informações, tornando a moderação mais coesa e imparcial.
+
+## Comandos disponíveis
+
+### `/ban`
+
+Bane um membro do servidor de forma temporária ou permanente. Ao banir com duração definida, o membro é desbanido automaticamente quando o período expira.
+
+```
+/ban usuário:@Spammer#9999 motivo:"Raid no servidor" duração:7d
+```
+
+---
+
+### `/unban`
+
+Remove o banimento de um usuário que estava impedido de entrar no servidor. É necessário informar o ID do usuário, pois ele já não é mais membro.
+
+```
+/unban usuário:987654321
+```
+
+---
+
+### `/kick`
+
+Expulsa um membro do servidor sem aplicar banimento. O usuário pode entrar novamente por meio de um convite válido.
+
+```
+/kick usuário:@Troll#0001 motivo:"Comportamento inadequado reiterado"
+```
+
+---
+
+### `/mute`
+
+Silencia um membro nos canais de texto pelo período definido, impedindo que ele envie mensagens ou reaja a elas. Utiliza o cargo de mudo gerenciado pelo Atlas Bots.
+
+```
+/mute usuário:@Flood#1234 duração:1h motivo:"Flood no canal geral"
+```
+
+---
+
+### `/unmute`
+
+Remove o silenciamento de um membro antes que o período expire, caso o contexto tenha mudado.
+
+```
+/unmute usuário:@Flood#1234
+```
+
+---
+
+### `/timeout`
+
+Aplica o timeout nativo do Discord, que impede o membro de enviar mensagens, reagir, entrar em canais de voz e interagir com o servidor pelo período especificado. Não requer configuração de cargo adicional.
+
+```
+/timeout usuário:@Briguento#5678 duração:30m motivo:"Discussão acalorada — resfriamento"
+```
+
+---
+
+### `/warn`
+
+Registra uma advertência formal no histórico do membro. O usuário recebe uma notificação por DM com o motivo da advertência e o identificador do protocolo gerado.
+
+```
+/warn usuário:@Novato#4321 motivo:"Uso de linguagem imprópria (1ª ocorrência)"
+```
+
+---
+
+### `/infrações`
+
+Exibe o histórico completo de punições de um membro, incluindo warns, mutes, kicks e bans anteriores, com data, moderador responsável e motivo de cada ocorrência.
+
+```
+/infrações usuário:@Novato#4321
+```
+
+---
+
+### `/remover-infração`
+
+Remove uma advertência específica do histórico de um membro a partir do ID do protocolo. Útil para corrigir advertências aplicadas por engano.
+
+```
+/remover-infração id:INF-0017
+```
+
+---
+
+### `/clear`
+
+Apaga em massa mensagens de um canal. Você pode limpar as últimas N mensagens ou filtrar por usuário. O Discord limita a exclusão em massa a mensagens com até **14 dias** de idade.
+
+```
+/clear quantidade:50
+/clear quantidade:20 usuário:@Spammer#9999
+```
+
+---
+
+## Punições automáticas por acúmulo
+
+Você pode configurar o Atlas Bots para aplicar punições escaláveis automaticamente conforme um membro acumula advertências. Isso garante consistência nas punições e reduz a necessidade de intervenção manual para casos recorrentes.
+
+Para configurar, acesse **Moderação > Punições automáticas** no Dashboard e defina as regras de escalonamento. Exemplo de configuração típica:
+
+| Número de warns | Ação automática |
+|---|---|
+| 2 warns | Mute de 30 minutos |
+| 4 warns | Mute de 24 horas |
+| 6 warns | Kick do servidor |
+| 8 warns | Ban temporário de 7 dias |
+| 10 warns | Ban permanente |
+
+Cada regra pode ser personalizada com a duração da punição e uma mensagem de notificação enviada ao membro por DM. Você também pode definir um período de "decaimento" de warns — por exemplo, cada advertência expira automaticamente após 30 dias.
+
+<Tip>
+  Boas práticas de moderação incluem sempre registrar um motivo claro e objetivo ao aplicar qualquer punição. Isso protege sua equipe de contestações, ajuda outros moderadores a entenderem o histórico do membro e melhora a percepção de justiça por parte da comunidade. Use o campo `motivo` em todos os comandos, mesmo quando não for obrigatório.
+</Tip>

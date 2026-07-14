@@ -1,0 +1,63 @@
+---
+title: "Personalizar mensagem de boas-vindas no Discord"
+sidebarTitle: "Mensagem"
+description: "Configure mensagens de boas-vindas e despedida personalizadas com variáveis dinâmicas, embeds coloridos e imagens para seu servidor Discord."
+---
+
+Fazer um novo membro se sentir bem-vindo começa pela mensagem certa. Com o Atlas Bots, você personaliza completamente o texto de boas-vindas: escolha variáveis dinâmicas que trazem o nome do usuário e o tamanho do servidor, monte um embed com cor e imagem temática, e ainda configure o que aparece quando alguém vai embora. Tudo isso sem precisar escrever uma linha de código.
+
+## Como configurar a mensagem de boas-vindas
+
+<Steps>
+  <Step title="Acesse o painel do sistema">
+    No Dashboard do Atlas Bots, navegue até **Sistemas** → **Boas-vindas**.
+  </Step>
+  <Step title="Ative o sistema de boas-vindas">
+    Habilite o toggle **Ativar Boas-vindas** para que o bot comece a monitorar entradas no servidor.
+  </Step>
+  <Step title="Selecione o canal de boas-vindas">
+    No campo **Canal**, escolha o canal de texto onde as mensagens de entrada serão enviadas.
+  </Step>
+  <Step title="Escreva a mensagem usando variáveis">
+    Redija o texto da mensagem no campo **Conteúdo**. Use as variáveis disponíveis (listadas abaixo) para tornar a mensagem dinâmica e personalizada para cada novo membro.
+  </Step>
+  <Step title="Personalize o embed">
+    Defina a **cor** da barra lateral do embed, o **título**, a **descrição** e, se quiser, adicione uma **imagem** ou o avatar do novo membro como thumbnail.
+  </Step>
+  <Step title="Salve e teste">
+    Clique em **Salvar** e use o comando `/boas-vindas testar` no Discord para visualizar como a mensagem ficará para um novo membro real.
+  </Step>
+</Steps>
+
+## Variáveis disponíveis
+
+Use estas variáveis no texto da mensagem para que o bot substitua automaticamente pelo valor correto em cada envio:
+
+| Variável              | O que exibe                                   |
+| --------------------- | --------------------------------------------- |
+| `{usuario}`           | Menção direta do usuário (ex.: @João)         |
+| `{usuario.nome}`      | Nome de usuário sem discriminator             |
+| `{usuario.tag}`       | Tag completa do usuário (ex.: João#0000)      |
+| `{servidor}`          | Nome do servidor                              |
+| `{servidor.membros}`  | Número total de membros no servidor           |
+| `{servidor.id}`       | ID único do servidor                          |
+| `{data}`              | Data atual no formato DD/MM/AAAA              |
+| `{hora}`              | Hora atual no formato HH:MM                   |
+
+## Mensagem de despedida
+
+Além da mensagem de entrada, você pode configurar uma mensagem de **despedida** para notificar o servidor quando um membro sai. No Dashboard, ative a seção **Saída** dentro do sistema de boas-vindas, escolha o canal de destino (pode ser o mesmo ou diferente do canal de entrada) e escreva o texto usando as mesmas variáveis disponíveis. Assim, sua comunidade sempre fica ciente das mudanças no grupo.
+
+## DM de boas-vindas
+
+O Atlas Bots também permite enviar uma **mensagem privada** diretamente ao novo membro assim que ele entra no servidor. Ative a opção **DM de Boas-vindas** no Dashboard, escreva o conteúdo que será enviado por mensagem direta e use as variáveis normalmente. É uma ótima forma de explicar as regras do servidor, apresentar canais importantes ou simplesmente dar uma saudação mais pessoal logo de cara.
+
+<Tip>
+  Uma mensagem de boas-vindas bem formatada faz toda a diferença. Veja este exemplo:
+
+  > 🎉 Seja muito bem-vindo(a), {usuario}!
+  > Você é o membro de número **{servidor.membros}** do **{servidor}**.
+  > Leia as regras no canal #regras e aproveite a comunidade. Estamos felizes em ter você aqui!
+
+  Esse modelo é amigável, traz dados dinâmicos e orienta o novo membro em apenas três linhas.
+</Tip>

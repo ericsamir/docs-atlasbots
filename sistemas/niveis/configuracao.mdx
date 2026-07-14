@@ -1,0 +1,64 @@
+---
+title: "Configurar sistema de níveis e XP no Discord"
+sidebarTitle: "Configuração"
+description: "Ative e personalize o sistema de XP e níveis do Atlas Bots: multiplicadores, canais ignorados, mensagem de level-up e notificações personalizadas."
+---
+
+O sistema de níveis do Atlas Bots é altamente configurável: você decide quanto XP cada mensagem vale, quais canais e cargos estão fora do sistema, onde aparecem as notificações de level-up e até quanto certos cargos rendem a mais para membros premium. Siga o passo a passo abaixo para deixar tudo do jeito que a sua comunidade merece.
+
+## Como configurar o sistema de níveis
+
+<Steps>
+  <Step title="Acesse o painel de Níveis">
+    No Dashboard do Atlas Bots, navegue até **Sistemas** → **Níveis**.
+  </Step>
+  <Step title="Ative o sistema">
+    Habilite o toggle **Ativar Sistema de Níveis** para que o bot comece a contabilizar o XP dos membros.
+  </Step>
+  <Step title="Configure o canal de notificações">
+    Escolha onde as mensagens de level-up serão enviadas. Você pode selecionar um **canal específico** ou marcar a opção **No canal da mensagem** para que a notificação apareça no mesmo local onde o membro subiu de nível.
+  </Step>
+  <Step title="Escreva a mensagem de level-up">
+    No campo **Mensagem de Level-Up**, personalize o texto que será enviado quando um membro subir de nível. Use as variáveis disponíveis (listadas abaixo) para tornar a mensagem dinâmica.
+  </Step>
+  <Step title="Configure multiplicadores por cargo">
+    Na seção **Multiplicadores**, adicione cargos e defina um fator de multiplicação de XP para cada um (ex.: cargo Premium = 2×). Membros com esse cargo ganharão o dobro de XP por mensagem.
+  </Step>
+  <Step title="Defina canais e cargos ignorados">
+    Em **Canais Ignorados**, selecione os canais onde as mensagens não geram XP (como canais de bot ou spam). Em **Cargos Ignorados**, adicione cargos cujos membros não devem acumular XP.
+  </Step>
+  <Step title="Salve as configurações">
+    Clique em **Salvar** para aplicar todas as alterações. As mudanças entram em vigor imediatamente para novos ganhos de XP.
+  </Step>
+</Steps>
+
+## Opções configuráveis
+
+Veja um resumo completo de todas as opções disponíveis no painel de configuração:
+
+| Opção                              | Descrição                                                                 |
+| ---------------------------------- | ------------------------------------------------------------------------- |
+| **Ativar/desativar sistema**        | Liga ou desliga o sistema de níveis para todo o servidor.                 |
+| **Canal de notificação de level-up**| Canal onde as mensagens de subida de nível são enviadas.                  |
+| **Mensagem de level-up**           | Texto personalizado enviado quando um membro sobe de nível.               |
+| **Multiplicador de XP**            | Fator aplicado ao XP ganho por membros com cargos específicos.            |
+| **Canais ignorados**               | Canais nos quais as mensagens não geram XP para nenhum membro.            |
+| **Cargos ignorados**               | Membros com esses cargos não acumulam XP independentemente do canal.      |
+| **Cooldown entre ganhos (seg)**    | Tempo mínimo entre dois ganhos consecutivos de XP para o mesmo membro.    |
+| **XP mínimo por mensagem**         | Menor valor possível de XP que uma mensagem pode render.                  |
+| **XP máximo por mensagem**         | Maior valor possível de XP que uma mensagem pode render.                  |
+
+## Variáveis para mensagem de level-up
+
+Use estas variáveis no campo de mensagem de level-up para que o bot substitua automaticamente as informações corretas:
+
+| Variável       | O que exibe                                      |
+| -------------- | ------------------------------------------------ |
+| `{usuario}`    | Menção direta do membro que subiu de nível       |
+| `{nivel}`      | Número do novo nível alcançado                   |
+| `{xp_total}`   | Total de XP acumulado pelo membro até o momento  |
+| `{servidor}`   | Nome do servidor                                 |
+
+<Tip>
+  Use **multiplicadores de XP** para valorizar cargos de membros premium ou assinantes da sua comunidade. Por exemplo, defina um multiplicador de **2×** para o cargo "VIP" — isso incentiva membros a buscarem o cargo e cria uma camada extra de engajamento sem custo nenhum para você.
+</Tip>

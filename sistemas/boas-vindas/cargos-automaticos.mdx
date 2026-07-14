@@ -1,0 +1,50 @@
+---
+title: "Cargos automáticos para novos membros do servidor"
+sidebarTitle: "Cargos Automáticos"
+description: "Configure cargos que são atribuídos automaticamente quando novos membros entram no servidor, sem necessidade de aprovação manual da equipe."
+---
+
+O recurso de cargos automáticos (também conhecido como *auto-role*) garante que todo novo membro receba os cargos corretos assim que entrar no servidor, sem que nenhum moderador precise agir manualmente. É ideal para liberar acesso a canais básicos, identificar membros regulares ou aplicar qualquer cargo de entrada que a sua comunidade utilize. A configuração é feita em poucos cliques direto pelo Dashboard.
+
+## Como configurar cargos automáticos
+
+<Steps>
+  <Step title="Acesse a seção de Cargos Automáticos">
+    No Dashboard do Atlas Bots, navegue até **Sistemas** → **Boas-vindas** → **Cargos Automáticos**.
+  </Step>
+  <Step title="Adicione um novo cargo">
+    Clique no botão **Adicionar Cargo** para abrir o seletor de cargos do servidor.
+  </Step>
+  <Step title="Selecione o cargo desejado">
+    Escolha na lista o cargo que será atribuído automaticamente a cada novo membro que entrar no servidor.
+  </Step>
+  <Step title="Salve as configurações">
+    Clique em **Salvar**. A partir deste momento, todos os novos membros receberão o cargo selecionado automaticamente ao entrar.
+  </Step>
+</Steps>
+
+<Warning>
+  O Atlas Bots só consegue atribuir cargos que estejam **abaixo do cargo do próprio bot** na hierarquia do servidor. Se o cargo do bot for inferior ao cargo que você quer atribuir, a atribuição falhará silenciosamente. Certifique-se de que o cargo do Atlas Bots esteja acima de todos os cargos automáticos configurados nas configurações do servidor (Cargos → arrastar para reordenar).
+</Warning>
+
+## Cargos para bots
+
+Você pode configurar cargos que serão atribuídos **exclusivamente a contas bot** ao entrar no servidor. Isso é útil para identificar bots visualmente na lista de membros ou para conceder permissões específicas a integrações automaticamente. Na seção de Cargos Automáticos, ative a opção **Somente para Bots** ao adicionar um cargo — ele será ignorado para contas humanas e aplicado apenas a novos bots adicionados ao servidor.
+
+<Tip>
+  Uma boa prática é criar um cargo chamado **Membro** (sem permissões especiais) e adicioná-lo como cargo automático. Assim, você diferencia facilmente quem já passou pelo processo de entrada de quem ainda não interagiu com o servidor, e pode usar esse cargo como base para regras de canais e verificações futuras.
+</Tip>
+
+## Perguntas frequentes
+
+<AccordionGroup>
+  <Accordion title="Posso adicionar múltiplos cargos automáticos?">
+    Sim! Você pode adicionar quantos cargos automáticos quiser. Todos os cargos configurados serão atribuídos simultaneamente ao novo membro no momento em que ele entrar no servidor. Basta clicar em **Adicionar Cargo** novamente para incluir mais um à lista.
+  </Accordion>
+  <Accordion title="Os cargos são dados a bots também?">
+    Por padrão, os cargos automáticos são atribuídos a todos os novos membros, incluindo bots. Se você quiser que um cargo seja dado **apenas a humanos** ou **apenas a bots**, utilize a opção de filtro disponível ao configurar cada cargo automático no Dashboard.
+  </Accordion>
+  <Accordion title="O que acontece se o bot não tiver permissão?">
+    Se o Atlas Bots não tiver a permissão **Gerenciar Cargos** ou se o cargo a ser atribuído estiver acima do cargo do bot na hierarquia, a atribuição não será realizada. O bot não enviará mensagens de erro por padrão — por isso, sempre teste a configuração após salvar usando o comando `/boas-vindas testar` e verifique se os cargos foram atribuídos corretamente.
+  </Accordion>
+</AccordionGroup>

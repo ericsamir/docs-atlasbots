@@ -1,0 +1,58 @@
+---
+title: "Loja do servidor: venda itens e cargos por moedas"
+sidebarTitle: "Loja"
+description: "Configure a loja do servidor para vender cargos, itens personalizados e recompensas em troca de moedas virtuais com o sistema de economia do Atlas Bots."
+---
+
+A loja do servidor é onde a economia realmente ganha vida. Com ela, os membros podem gastar as moedas que acumularam comprando cargos exclusivos, itens personalizados ou até recompensas especiais que você define. Isso cria um ciclo de engajamento poderoso: membros participam mais para ganhar moedas, e gastam essas moedas para obter benefícios reais dentro do servidor.
+
+## Criando um item na loja
+
+<Steps>
+  <Step title="Acesse a loja no dashboard">
+    No [dashboard do Atlas Bots](https://atlasbots.com.br/dashboard), vá até **Sistemas → Economia → Loja**.
+  </Step>
+  <Step title="Crie um novo item">
+    Clique no botão **Novo Item** para abrir o formulário de criação.
+  </Step>
+  <Step title="Defina nome, descrição e preço">
+    Preencha o **nome** do item (que aparecerá na `/loja`), uma **descrição** explicando o que o item faz e o **preço** em moedas para a compra.
+  </Step>
+  <Step title="Escolha o tipo de item">
+    Selecione o tipo que melhor representa o item: **Cargo**, **Item Personalizado** ou **Resposta**. Cada tipo tem um comportamento diferente ao ser comprado — veja a seção abaixo para entender cada um.
+  </Step>
+  <Step title="Configure o efeito do item">
+    De acordo com o tipo escolhido, configure o efeito: qual cargo será atribuído, qual mensagem o bot vai enviar ou qual nome aparecerá no inventário do usuário.
+  </Step>
+  <Step title="Defina o limite de compras por usuário">
+    Opcionalmente, configure um **limite de compras por usuário** — por exemplo, cada membro só pode comprar aquele item uma vez. Deixe em branco para permitir compras ilimitadas.
+  </Step>
+  <Step title="Salve o item">
+    Clique em **Salvar**. O item aparecerá imediatamente na loja acessível pelo comando `/loja`.
+  </Step>
+</Steps>
+
+## Tipos de item
+
+| Tipo | Comportamento |
+|---|---|
+| **Cargo** | Ao comprar, o bot atribui automaticamente o cargo selecionado ao comprador |
+| **Item Personalizado** | O item vai para o inventário do usuário e pode ser usado com `/usar [item]` |
+| **Resposta** | O bot envia uma mensagem privada ao comprador — útil para cupons, códigos ou instruções exclusivas |
+
+## Comandos da loja
+
+| Comando | Descrição |
+|---|---|
+| `/loja` | Exibe todos os itens disponíveis para compra no servidor |
+| `/comprar [item]` | Compra o item especificado usando o seu saldo de moedas |
+| `/inventário` | Lista todos os itens que você já comprou e possui |
+| `/usar [item]` | Usa um item do inventário (disponível para Itens Personalizados) |
+
+<Tip>
+  Use a loja para vender **cargos exclusivos** que não podem ser conquistados de outra forma, como "VIP", "Apoiador" ou "Membro Lendário". Isso dá um valor real às moedas e motiva os membros a participarem mais ativamente do servidor.
+</Tip>
+
+<Warning>
+  Para itens do tipo **Cargo**, o Atlas Bots precisa ter um cargo com hierarquia **superior** ao cargo que será vendido. Caso contrário, o bot não conseguirá atribuir o cargo ao comprador e a compra falhará. Verifique sempre a ordem dos cargos nas configurações do Discord.
+</Warning>

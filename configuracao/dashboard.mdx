@@ -1,0 +1,64 @@
+---
+title: "Dashboard Atlas Bots: painel de controle do seu bot"
+sidebarTitle: "Dashboard"
+description: "Acesse o painel de controle do Atlas Bots para configurar todos os sistemas do seu bot Discord de forma visual, sem precisar usar comandos."
+---
+
+O Dashboard do Atlas Bots é o painel de controle central onde você gerencia todos os sistemas do seu bot de forma visual e intuitiva. Em vez de decorar comandos, você configura moderação, economia, tickets e muito mais por meio de uma interface web completa — sem precisar digitar uma linha sequer no chat do Discord.
+
+## Como acessar o dashboard
+
+<Steps>
+  <Step title="Acesse o endereço do dashboard">
+    Abra seu navegador e vá para [dashboard.atlas-bots.com](https://dashboard.atlas-bots.com).
+  </Step>
+  <Step title="Entre com o Discord">
+    Clique no botão **"Entrar com Discord"** para autenticar sua conta.
+  </Step>
+  <Step title="Autorize o acesso">
+    Uma janela do Discord será aberta solicitando permissão de leitura do seu perfil. Clique em **"Autorizar"** para continuar.
+  </Step>
+  <Step title="Selecione o servidor">
+    Após o login, você verá a lista de servidores onde possui permissão de administrador. Clique sobre o servidor que deseja configurar.
+  </Step>
+  <Step title="Navegue pelos sistemas">
+    Use o **menu lateral** para acessar cada módulo disponível — moderação, economia, tickets, música e muito mais.
+  </Step>
+</Steps>
+
+<Note>
+  Apenas membros com o cargo de **Administrador** no servidor têm permissão para acessar e modificar configurações no dashboard. Certifique-se de que sua conta Discord possui essa permissão antes de tentar fazer login.
+</Note>
+
+## Visão geral do painel
+
+Ao entrar no dashboard de um servidor, você encontra quatro áreas principais organizadas de forma clara:
+
+**Resumo do servidor** — Exibe o status atual do bot (online/offline), o número total de membros, os comandos executados nas últimas 24 horas e alertas de configurações incompletas.
+
+**Menu de sistemas** — Localizado na barra lateral esquerda, lista todos os módulos disponíveis no seu plano: Moderação, Economia, Tickets, Música, Boas-vindas, Logs e outros. Clique em qualquer módulo para acessar suas configurações detalhadas.
+
+**Configurações gerais** — Área dedicada às configurações globais do bot no servidor, como prefixo de comandos, idioma, permissões por cargo e integrações externas (webhooks e API).
+
+**Histórico de ações** — Registro cronológico de todas as alterações feitas no dashboard, incluindo qual administrador realizou cada mudança e quando. Útil para auditorias e resolução de problemas.
+
+## Seções de configuração
+
+<CardGroup cols={2}>
+  <Card title="Permissões" icon="shield-halved" href="/configuracao/permissoes">
+    Controle quais cargos e usuários podem executar cada comando do bot, com granularidade por módulo e canal.
+  </Card>
+  <Card title="Prefixo e Idioma" icon="language" href="/configuracao/prefixo-e-idioma">
+    Personalize o prefixo de comandos de texto e o idioma das respostas do bot para o seu servidor.
+  </Card>
+  <Card title="Webhooks" icon="webhook" href="/configuracao/webhooks">
+    Receba notificações em tempo real de eventos do bot diretamente em canais do Discord ou serviços externos.
+  </Card>
+  <Card title="API" icon="code" href="/configuracao/api">
+    Integre dados do Atlas Bots com sistemas externos usando a API REST com autenticação por token.
+  </Card>
+</CardGroup>
+
+<Tip>
+  Salve o dashboard nos favoritos do seu navegador para acessá-lo rapidamente sempre que precisar ajustar alguma configuração. O endereço direto para o seu servidor é `dashboard.atlas-bots.com/guilds/SEU_SERVER_ID`.
+</Tip>

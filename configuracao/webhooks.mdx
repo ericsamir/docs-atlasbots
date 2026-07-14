@@ -1,0 +1,75 @@
+---
+title: "Webhooks: receba notificações de eventos do bot"
+sidebarTitle: "Webhooks"
+description: "Configure webhooks no Atlas Bots para receber notificações em tempo real de eventos como punições, tickets abertos, compras na loja e muito mais."
+---
+
+Webhooks são URLs especiais que permitem ao Atlas Bots enviar notificações automáticas para um canal do Discord (ou para qualquer serviço externo) sempre que um evento específico acontecer no seu servidor. Com eles, você pode, por exemplo, registrar cada banimento em um canal de logs privado, notificar sua equipe quando um ticket for aberto ou monitorar compras da loja em tempo real.
+
+## Como configurar um webhook
+
+<Steps>
+  <Step title="Crie o webhook no Discord">
+    No Discord, acesse as **Configurações do Canal** do canal onde deseja receber as notificações. Vá em **Integrações → Webhooks** e clique em **"Novo Webhook"**.
+  </Step>
+  <Step title="Copie a URL do webhook">
+    Dê um nome ao webhook (por exemplo, "Atlas Logs"), escolha um ícone se desejar e clique em **"Copiar URL do Webhook"**. Guarde essa URL — você vai precisar dela no próximo passo.
+  </Step>
+  <Step title="Acesse a área de webhooks no dashboard">
+    No dashboard do Atlas Bots, vá em **Configurações → Webhooks**.
+  </Step>
+  <Step title="Adicione um novo webhook">
+    Clique em **"Adicionar Webhook"** para abrir o formulário de configuração.
+  </Step>
+  <Step title="Cole a URL e selecione os eventos">
+    Cole a URL copiada do Discord no campo indicado. Em seguida, marque quais **eventos** devem disparar uma notificação para esse webhook. Você pode selecionar múltiplos eventos para a mesma URL.
+  </Step>
+  <Step title="Salve e teste">
+    Clique em **"Salvar"** e depois use o botão **"Testar"** para enviar uma notificação de exemplo ao canal configurado. Se a mensagem aparecer no Discord, o webhook está funcionando corretamente.
+  </Step>
+</Steps>
+
+## Eventos disponíveis
+
+| Evento | Descrição |
+|---|---|
+| `member.join` | Um novo membro entrou no servidor |
+| `member.leave` | Um membro saiu ou foi removido do servidor |
+| `moderation.ban` | Um membro foi banido por um moderador ou pelo bot |
+| `moderation.kick` | Um membro foi expulso (kick) do servidor |
+| `moderation.warn` | Um membro recebeu uma advertência |
+| `ticket.open` | Um novo ticket de suporte foi aberto |
+| `ticket.close` | Um ticket de suporte foi encerrado |
+| `economy.purchase` | Uma compra foi realizada na loja do servidor |
+| `level.up` | Um membro subiu de nível no sistema de XP |
+
+## Exemplo de payload
+
+Quando um evento de punição é disparado, o Atlas Bots envia um payload JSON com os dados do evento para a URL configurada. Veja um exemplo para o evento `moderation.ban`:
+
+```json
+{
+  "event": "moderation.ban",
+  "timestamp": "2024-07-15T14:32:00.000Z",
+  "guild": {
+    "id": "123456789012345678",
+    "name": "Meu Servidor"
+  },
+  "target": {
+    "id": "987654321098765432",
+    "username": "usuario_banido",
+    "discriminator": "0"
+  },
+  "moderator": {
+    "id": "111222333444555666",
+    "username": "moderador_exemplo",
+    "discriminator": "0"
+  },
+  "reason": "Comportamento inadequado repetido",
+  "case_id": 42
+}
+```
+
+<Info>
+  O Discord impõe **rate limits** nos webhooks: no máximo **30 requisições a cada 60 segundos** por URL de webhook. Se o seu servidor gerar muitos eventos simultâneos (por exemplo, um pico de entradas de membros), alguns disparos podem ser enfileirados ou descartados. Para servidores de grande porte, considere usar webhooks separados para diferentes categorias de eventos.
+</Info>

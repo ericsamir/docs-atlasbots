@@ -1,0 +1,49 @@
+---
+title: "Recompensas de nível: cargos automáticos por XP"
+sidebarTitle: "Recompensas"
+description: "Configure cargos que são atribuídos automaticamente quando membros atingem determinados níveis no sistema de XP do Atlas Bots."
+---
+
+As recompensas de nível — também chamadas de *level roles* — são a cereja do bolo do sistema de XP. Com elas, você cria uma progressão real dentro do servidor: conforme os membros se dedicam e sobem de nível, recebem cargos exclusivos automaticamente, sem precisar abrir um ticket ou pedir a um moderador. É uma forma poderosa de reconhecer quem está presente e ativa na comunidade.
+
+## Como configurar recompensas de nível
+
+<Steps>
+  <Step title="Acesse a seção de Recompensas">
+    No Dashboard do Atlas Bots, navegue até **Sistemas** → **Níveis** → **Recompensas**.
+  </Step>
+  <Step title="Adicione uma nova recompensa">
+    Clique em **Adicionar Recompensa** para abrir o formulário de configuração de uma nova regra de recompensa.
+  </Step>
+  <Step title="Defina o nível necessário">
+    No campo **Nível**, informe a partir de qual nível o cargo será concedido automaticamente ao membro.
+  </Step>
+  <Step title="Selecione o cargo a ser dado">
+    Escolha na lista o cargo do servidor que será atribuído quando o membro atingir o nível configurado.
+  </Step>
+  <Step title="Escolha o comportamento do cargo anterior">
+    Defina se o cargo do nível anterior deve ser **mantido** (o membro acumula todos os cargos de nível) ou **removido** (o membro sempre tem apenas o cargo do nível atual). Isso depende da sua estratégia de progressão.
+  </Step>
+  <Step title="Salve a recompensa">
+    Clique em **Salvar**. A recompensa entra em vigor imediatamente — membros que já atingiram o nível configurado receberão o cargo automaticamente.
+  </Step>
+</Steps>
+
+## Exemplo de progressão de cargos
+
+Veja um modelo de escada de progressão que você pode adaptar para o seu servidor:
+
+| Nível necessário | Cargo concedido     | Perfil do membro                    |
+| ---------------- | ------------------- | ------------------------------------ |
+| Nível 5          | 🟢 Membro Ativo     | Começou a participar ativamente      |
+| Nível 10         | 🔵 Veterano         | Presença consistente no servidor     |
+| Nível 25         | 🟣 Elite            | Membro de longa data e muito ativo   |
+| Nível 50         | 🏆 Lendário         | Um dos pilares da comunidade         |
+
+<Warning>
+  Assim como nos cargos automáticos, o Atlas Bots só pode atribuir recompensas de nível para cargos que estejam **abaixo do cargo do bot** na hierarquia do servidor. Verifique a ordem dos cargos em **Configurações do Servidor** → **Cargos** e certifique-se de que o cargo do Atlas Bots está posicionado acima de todos os cargos de recompensa configurados.
+</Warning>
+
+<Tip>
+  Pense nas recompensas de nível como uma **estratégia de engajamento de longo prazo**. Cargos com nomes atraentes e com permissões especiais (como acesso a canais exclusivos ou cor diferenciada) incentivam os membros a continuarem participando. Combine isso com os multiplicadores de XP para criar uma progressão ainda mais rica e personalizada para a sua comunidade.
+</Tip>

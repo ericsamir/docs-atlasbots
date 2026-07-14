@@ -1,0 +1,59 @@
+---
+title: "Auto-moderação: filtros automáticos para seu servidor"
+sidebarTitle: "Auto-moderação"
+description: "Configure filtros automáticos de palavras proibidas, links, spam, menções em excesso e mais para manter seu servidor Discord saudável."
+---
+
+A auto-moderação do Atlas Bots age de forma silenciosa e contínua para proteger seu servidor mesmo quando nenhum moderador humano está online. Ela monitora todas as mensagens enviadas em tempo real e aplica as ações configuradas automaticamente — deletar a mensagem, silenciar o membro, registrar um aviso ou todas as opções juntas. Isso reduz a carga de trabalho da sua equipe de staff e garante que as regras do servidor sejam cumpridas de forma consistente, sem favoritismos.
+
+## Habilitando a auto-moderação
+
+<Steps>
+  <Step title="Acesse o Dashboard">
+    Entre em [dashboard.atlasbots.com.br](https://dashboard.atlasbots.com.br) com a sua conta Discord.
+  </Step>
+  <Step title="Selecione seu servidor">
+    Na tela inicial, clique no servidor que você deseja configurar. Você precisa ter a permissão **Gerenciar Servidor** para acessar as configurações.
+  </Step>
+  <Step title="Vá em Moderação > Auto-mod">
+    No menu lateral esquerdo, expanda a seção **Moderação** e clique em **Auto-moderação**.
+  </Step>
+  <Step title="Ative os filtros desejados">
+    Cada filtro possui um interruptor individual. Ative aqueles que fazem sentido para a realidade do seu servidor e preencha as configurações específicas de cada um, como palavras proibidas, limite de menções ou percentual de letras maiúsculas.
+  </Step>
+  <Step title="Salve as configurações">
+    Clique em **Salvar alterações** no rodapé da página. As novas regras entram em vigor imediatamente, sem necessidade de reiniciar o bot.
+  </Step>
+</Steps>
+
+## Filtros disponíveis
+
+A tabela a seguir detalha cada filtro disponível, o que ele faz e como configurá-lo.
+
+| Filtro | Descrição | Exemplo de configuração |
+|---|---|---|
+| **Palavras proibidas** | Detecta e remove mensagens que contenham termos da sua lista negra. Suporta correspondência exata, parcial e expressões regulares. | Adicione palavras separadas por vírgula: `palavrão1, palavrão2, *termo*` |
+| **Links externos** | Bloqueia o envio de URLs que não estejam na lista branca de domínios aprovados. Útil para evitar phishing e spam de convites. | Permita apenas `discord.gg` e `youtube.com`; bloqueie tudo o mais |
+| **Anti-spam** | Limita o número de mensagens que um membro pode enviar dentro de uma janela de tempo configurável. | Máximo de **5 mensagens em 5 segundos** antes de aplicar silenciamento |
+| **Anti-flood** | Detecta mensagens repetidas ou praticamente idênticas enviadas em sequência pelo mesmo usuário. | Bloquear após **3 mensagens iguais** em menos de **10 segundos** |
+| **Menções em excesso** | Impede que um membro mencione muitos usuários ou cargos em uma única mensagem, coibindo raids e assédio. | Limite de **5 menções** por mensagem |
+| **Emojis em excesso** | Remove mensagens que ultrapassem um número definido de emojis (incluindo emojis customizados do servidor). | Limite de **10 emojis** por mensagem |
+| **Maiúsculas em excesso** | Bloqueia mensagens em que a porcentagem de letras maiúsculas ultrapasse o limite configurado, reduzindo GRITARIA no chat. | Bloquear se mais de **70%** dos caracteres forem maiúsculos (mínimo de 10 caracteres) |
+
+## Lista branca (Whitelist)
+
+Alguns canais, cargos e usuários precisam ser isentos das regras de auto-moderação — como canais de anúncios, bots parceiros ou a equipe de staff. Você pode configurar exceções individualmente para cada filtro ou criar uma whitelist global que se aplica a todos.
+
+Para adicionar uma isenção, acesse o painel de cada filtro e utilize os campos:
+
+- **Canais isentos** — mensagens nesses canais ignoram o filtro completamente.
+- **Cargos isentos** — membros com esses cargos não são afetados pelo filtro.
+- **Usuários isentos** — IDs de usuários específicos que estão dispensados da regra.
+
+<Tip>
+  Para testar se os filtros estão funcionando corretamente, crie um canal de moderação privado (visível apenas para a equipe de staff) e **remova-o temporariamente da lista de canais isentos**. Envie mensagens que deveriam ser bloqueadas e verifique se o bot age conforme o esperado. Lembre-se de adicionar o canal de volta à whitelist após o teste.
+</Tip>
+
+<Warning>
+  Filtros muito agressivos podem prejudicar a experiência de membros legítimos — especialmente o filtro de maiúsculas e o anti-spam em servidores de jogos, onde caps e mensagens rápidas são comuns. Ajuste os limites gradualmente e monitore os logs de auto-moderação nas primeiras 24 horas após ativar novos filtros para garantir que não haja falsos positivos em excesso.
+</Warning>

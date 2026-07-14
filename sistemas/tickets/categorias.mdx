@@ -1,0 +1,60 @@
+---
+title: "Categorias de Tickets: organize seus atendimentos"
+sidebarTitle: "Categorias"
+description: "Crie múltiplas categorias de tickets para separar tipos de atendimento como suporte, compras, parcerias e mais, cada uma com equipe e configuração própria."
+---
+
+Categorias de tickets permitem dividir os atendimentos do seu servidor em grupos distintos, cada um com nome, emoji, cargo de suporte e mensagem de abertura próprios. Em vez de um painel genérico, seus membros verão opções claras — como "Suporte Técnico", "Compras" ou "Parcerias" — e serão direcionados automaticamente à equipe certa, sem triagem manual.
+
+## Criando uma nova categoria
+
+<Steps>
+  <Step title="Acesse as categorias no Dashboard">
+    Vá até **Dashboard > Sistemas > Tickets > Categorias** e clique em **Nova Categoria** para iniciar a criação.
+  </Step>
+  <Step title="Clique em Nova Categoria">
+    Um formulário será aberto com todos os campos de configuração da categoria. Preencha cada campo conforme as instruções a seguir.
+  </Step>
+  <Step title="Defina nome, emoji e descrição">
+    Insira um nome curto e objetivo (ex.: "Suporte Técnico"), escolha um emoji representativo (ex.: 🔧) e escreva uma breve descrição que apareça no painel, explicando quando o membro deve usar essa categoria.
+  </Step>
+  <Step title="Selecione o cargo de suporte da categoria">
+    Escolha o cargo responsável por atender os tickets dessa categoria. Você pode usar um cargo diferente para cada categoria, permitindo equipes especializadas por tipo de atendimento.
+  </Step>
+  <Step title="Configure a mensagem de abertura">
+    Defina a mensagem que será enviada automaticamente quando um ticket dessa categoria for aberto. Use esse espaço para orientar o membro sobre quais informações fornecer e qual o prazo esperado de resposta.
+  </Step>
+  <Step title="Salve e publique o painel">
+    Clique em **Salvar** e, em seguida, use `/ticket painel` no canal de abertura para atualizar o painel com a nova categoria. As alterações são refletidas imediatamente.
+  </Step>
+</Steps>
+
+## Exemplos de categorias comuns
+
+A tabela abaixo traz sugestões de categorias utilizadas por servidores de comunidade e serviços no Discord. Use-as como referência para estruturar o seu sistema.
+
+| Categoria | Emoji | Quando usar |
+|---|---|---|
+| **Suporte Técnico** | 🔧 | Problemas com bots, cargos, canais ou funcionalidades do servidor |
+| **Compras** | 🛒 | Dúvidas sobre pagamentos, produtos digitais ou pedidos em andamento |
+| **Parcerias** | 🤝 | Propostas de parceria entre servidores ou criadores de conteúdo |
+| **Denúncias** | 🚨 | Reportar membros por comportamento inadequado ou violação de regras |
+| **Sugestões** | 💡 | Enviar ideias de melhoria para o servidor ou seus sistemas |
+
+## Cargos por categoria
+
+Cada categoria pode ter sua própria equipe de suporte, totalmente independente das demais. Isso significa que um membro com o cargo de "Equipe de Vendas" só terá acesso aos tickets da categoria **Compras**, sem visualizar os tickets de **Denúncias** ou **Suporte Técnico**, por exemplo.
+
+Essa separação aumenta a privacidade dos atendimentos e evita que informações sensíveis — como uma denúncia contra um moderador — sejam visíveis para toda a equipe. Configure os cargos com atenção para refletir a estrutura real do seu servidor.
+
+<Accordion title="Posso ter categorias com aparência diferente?">
+  Sim. Cada categoria possui configurações independentes de nome, emoji, descrição e mensagem de abertura. Embora o estilo visual do embed principal do painel seja compartilhado, a identificação de cada categoria no menu de seleção é totalmente personalizável.
+</Accordion>
+
+<Accordion title="Como reordenar as categorias no painel?">
+  No Dashboard, acesse **Sistemas > Tickets > Categorias** e utilize o recurso de arrastar e soltar para reposicionar as categorias na ordem desejada. A ordem exibida no painel do Discord seguirá exatamente a ordem definida por você.
+</Accordion>
+
+<Accordion title="Existe limite de categorias?">
+  O número de categorias disponíveis depende do plano do seu servidor no Atlas Bots. Servidores no plano gratuito podem criar até **3 categorias**; planos pagos oferecem categorias ilimitadas. Consulte a página de planos para mais detalhes.
+</Accordion>

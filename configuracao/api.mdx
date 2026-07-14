@@ -1,0 +1,61 @@
+---
+title: "API do Atlas Bots: integre dados do bot externamente"
+sidebarTitle: "API"
+description: "Use a API REST do Atlas Bots para consultar dados do servidor, saldos de economia, rankings de nível e informações de membros de forma programática."
+---
+
+A API REST do Atlas Bots permite que você acesse dados do seu servidor de forma programática — direto no seu site, painel administrativo, bot personalizado ou qualquer outra aplicação externa. Com ela, é possível exibir rankings de economia em um site da comunidade, integrar históricos de punições a sistemas de suporte ou automatizar relatórios periódicos sobre a atividade do servidor.
+
+## Autenticação
+
+Todas as requisições à API exigem um token de autenticação. Para gerar o seu:
+
+1. Acesse **Dashboard → Configurações → API**.
+2. Clique em **"Gerar Token"**.
+3. Copie o token gerado e guarde-o em local seguro — ele não será exibido novamente.
+
+Em cada requisição, envie o token no cabeçalho HTTP de autenticação:
+
+```
+Authorization: Bearer SEU_TOKEN
+```
+
+### Exemplo de requisição autenticada
+
+```bash
+curl -H "Authorization: Bearer SEU_TOKEN" \
+  https://api.atlas-bots.com/v1/guilds/SEU_SERVER_ID/members
+```
+
+## Endpoints disponíveis
+
+| Método | Endpoint | Descrição |
+|---|---|---|
+| `GET` | `/v1/guilds/:id` | Informações gerais do servidor |
+| `GET` | `/v1/guilds/:id/members` | Lista paginada de membros do servidor |
+| `GET` | `/v1/guilds/:id/economy/:userId` | Saldo e histórico de economia de um membro |
+| `GET` | `/v1/guilds/:id/levels/:userId` | Nível e XP atual de um membro |
+| `GET` | `/v1/guilds/:id/rankings/economy` | Ranking completo de economia do servidor |
+| `GET` | `/v1/guilds/:id/rankings/levels` | Ranking completo de níveis do servidor |
+| `GET` | `/v1/guilds/:id/moderation/history/:userId` | Histórico de punições de um membro |
+
+## Limites de uso (Rate Limits)
+
+O número de requisições permitidas por minuto varia conforme o plano contratado no Atlas Bots:
+
+| Plano | Requisições por minuto | Requisições por dia |
+|---|---|---|
+| **Gratuito** | 20 req/min | 500 req/dia |
+| **Starter** | 60 req/min | 5.000 req/dia |
+| **Pro** | 200 req/min | 50.000 req/dia |
+| **Enterprise** | Ilimitado | Ilimitado |
+
+Quando o limite for atingido, a API retorna o status `429 Too Many Requests` com um cabeçalho `Retry-After` indicando quantos segundos aguardar antes de tentar novamente.
+
+<Note>
+  Nesta versão, a API do Atlas Bots é **somente leitura** — todos os endpoints utilizam o método `GET`. Não é possível criar, editar ou excluir dados via API no momento. Funcionalidades de escrita estão previstas para versões futuras.
+</Note>
+
+<Warning>
+  **Nunca exponha seu token de API publicamente.** Não o inclua em repositórios públicos no GitHub, em código front-end acessível pelo navegador ou em mensagens em canais do Discord. Qualquer pessoa com acesso ao token pode consultar todos os dados do seu servidor. Se suspeitar de vazamento, revogue o token imediatamente em **Dashboard → Configurações → API → Revogar Token** e gere um novo.
+</Warning>

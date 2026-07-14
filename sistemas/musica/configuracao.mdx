@@ -1,0 +1,49 @@
+---
+title: "Configurar o player de música do Atlas Bots"
+sidebarTitle: "Configuração"
+description: "Personalize o sistema de música do Atlas Bots: canal de DJ, cargo de DJ, canal de música exclusivo, volume padrão e permissões de acesso."
+---
+
+O sistema de música do Atlas Bots funciona bem logo de início, mas com uma configuração básica você consegue deixar tudo muito mais organizado. Dá para definir quem pode controlar a música, criar um canal exclusivo para os comandos e ajustar comportamentos automáticos como o autoplay e a desconexão por inatividade — tudo pelo dashboard, em poucos cliques.
+
+## Passo a passo de configuração
+
+<Steps>
+  <Step title="Acesse as configurações de música">
+    No [dashboard do Atlas Bots](https://atlasbots.com.br/dashboard), selecione o seu servidor e vá até **Sistemas → Música**.
+  </Step>
+  <Step title="Defina o cargo de DJ">
+    No campo **Cargo de DJ**, selecione o cargo que terá permissão exclusiva para controlar o player de música. Essa etapa é opcional — se não for configurada, qualquer membro poderá usar os comandos de música.
+  </Step>
+  <Step title="Configure o canal exclusivo de comandos">
+    Escolha um canal de texto no campo **Canal de comandos exclusivo**. Quando configurado, o bot passará a responder comandos de música apenas neste canal, mantendo os outros canais organizados.
+  </Step>
+  <Step title="Ajuste o volume padrão">
+    Defina o **volume padrão** que o bot usará sempre que iniciar uma nova sessão de música. O valor vai de 1 a 100 — recomendamos algo entre 50 e 70 para a maioria dos servidores.
+  </Step>
+  <Step title="Ative ou desative o autoplay">
+    Escolha se o bot deve sugerir e tocar músicas automaticamente quando a fila terminar. Com o **autoplay ativado**, o bot continua tocando músicas relacionadas sem interrupção.
+  </Step>
+  <Step title="Salve as configurações">
+    Clique em **Salvar** para aplicar todas as alterações. As mudanças entram em vigor imediatamente no servidor.
+  </Step>
+</Steps>
+
+## Opções configuráveis
+
+| Opção | Descrição |
+|---|---|
+| **Cargo de DJ** | Cargo com permissão exclusiva de controlar o player (pular, parar, filtros etc.) |
+| **Canal de comandos exclusivo** | O bot só aceita comandos de música neste canal de texto específico |
+| **Volume padrão** | Volume inicial de cada nova sessão, de 1 a 100 |
+| **Autoplay** | Quando ativado, o bot sugere e toca músicas automaticamente ao fim da fila |
+| **Desconexão por inatividade** | Tempo em minutos sem nenhuma reprodução antes do bot sair do canal de voz sozinho |
+| **Duração máxima por música** | Limite em minutos para cada música — músicas mais longas serão bloqueadas |
+
+<Info>
+  **Como funciona o sistema de DJ:** quando um cargo de DJ está configurado, somente membros com esse cargo e administradores do servidor podem usar comandos que afetam a reprodução (como `/pular`, `/parar`, `/filtro` e `/volume`). Membros comuns ainda podem usar `/play` para adicionar músicas à fila — a não ser que você restrinja isso também nas permissões de comando do Discord.
+</Info>
+
+<Tip>
+  Crie um canal de texto chamado `🎵-música` ou `🎶-player` e configure-o como o **canal exclusivo de comandos de música**. Isso mantém os outros canais limpos e facilita que os membros saibam exatamente onde interagir com o player.
+</Tip>

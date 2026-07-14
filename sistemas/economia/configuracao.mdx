@@ -1,0 +1,49 @@
+---
+title: "Configurar a economia virtual do seu servidor Discord"
+sidebarTitle: "Configuração"
+description: "Personalize a moeda virtual do Atlas Bots: defina o nome, símbolo, recompensas diárias, multiplicadores por cargo e limites de transferência."
+---
+
+Antes de ativar o sistema de economia, vale a pena dedicar alguns minutos para configurá-lo do jeito que faz mais sentido para a sua comunidade. Você pode escolher um nome e emoji que combinam com o tema do servidor, ajustar quanto os membros ganham por dia e até criar multiplicadores para cargos especiais — tudo isso pelo dashboard, sem precisar digitar nenhum comando.
+
+## Passo a passo de configuração
+
+<Steps>
+  <Step title="Acesse o painel de economia">
+    No [dashboard do Atlas Bots](https://atlasbots.com.br/dashboard), selecione o seu servidor e navegue até **Sistemas → Economia**.
+  </Step>
+  <Step title="Ative o sistema">
+    Clique no botão de alternância para **ativar** o sistema de economia no servidor. Sem essa etapa, nenhum comando de economia ficará disponível para os membros.
+  </Step>
+  <Step title="Defina o nome da moeda">
+    No campo **Nome da moeda**, escreva como a sua moeda virtual vai se chamar. Exemplos populares são "Coins", "Ouro", "Gemas", "Créditos" ou qualquer nome que combine com o tema do seu servidor.
+  </Step>
+  <Step title="Defina o símbolo ou emoji da moeda">
+    No campo **Emoji/Símbolo**, escolha um emoji que vai aparecer ao lado do valor sempre que o saldo for exibido. Você pode usar emojis padrão (ex: 🪙, 💎, ⭐) ou emojis personalizados do próprio servidor.
+  </Step>
+  <Step title="Configure a recompensa diária">
+    Ajuste o valor que cada membro recebe ao usar o comando `/daily` e o cooldown entre resgates. O padrão é 100 moedas a cada 24 horas, mas você pode aumentar ou diminuir conforme preferir.
+  </Step>
+  <Step title="Ative o ganho de moeda por mensagem">
+    Se quiser recompensar membros ativos nas conversas, ative a opção **Ganho por mensagem** e defina os valores mínimo e máximo de moedas por mensagem, além do cooldown para evitar spam.
+  </Step>
+  <Step title="Salve as configurações">
+    Clique em **Salvar** para aplicar todas as alterações. As configurações entram em vigor imediatamente no servidor.
+  </Step>
+</Steps>
+
+## Opções configuráveis
+
+| Opção | Descrição |
+|---|---|
+| **Nome da moeda** | Como a moeda vai aparecer para os membros (ex: "Ouro", "Coins") |
+| **Emoji/símbolo** | Emoji exibido ao lado dos valores de saldo |
+| **Recompensa do `/daily`** | Valor em moedas e cooldown (padrão: 100 moedas / 24h) |
+| **Ganho por mensagem** | Valor mínimo e máximo de moedas por mensagem e cooldown entre ganhos |
+| **Multiplicador por cargo** | Cargos específicos ganham mais moedas (ex: VIP ganha 2x) |
+| **Limite de transferência diária** | Valor máximo que um membro pode transferir por dia via `/pagar` |
+| **Saldo inicial** | Quantidade de moedas que novos membros recebem ao entrar no servidor |
+
+<Tip>
+  Considere definir um **saldo inicial generoso** para os novos membros — algo entre 200 e 500 moedas. Isso permite que eles interajam com a loja logo de cara, antes mesmo de acumular moedas por conta própria, tornando a primeira experiência com a economia muito mais animada.
+</Tip>

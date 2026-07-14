@@ -1,0 +1,69 @@
+---
+title: "Configurar sistema de tickets no seu servidor Discord"
+sidebarTitle: "Configuração"
+description: "Passo a passo para ativar e personalizar o sistema de tickets do Atlas Bots: canal de abertura, mensagem, embed, cargo de suporte e limite de tickets."
+---
+
+Antes de receber o primeiro ticket, você precisa configurar o sistema pelo Dashboard do Atlas Bots. O processo leva poucos minutos e oferece controle completo sobre a aparência do painel, o cargo responsável pelo suporte e as regras de abertura — como limite por usuário e razão obrigatória.
+
+## Ativando o sistema
+
+<Steps>
+  <Step title="Acesse o Dashboard e selecione o servidor">
+    Entre em [atlasbots.com.br/dashboard](https://atlasbots.com.br/dashboard) com sua conta Discord e clique no servidor em que deseja configurar o sistema de tickets.
+  </Step>
+  <Step title="Navegue até Sistemas > Tickets">
+    No menu lateral esquerdo, expanda a seção **Sistemas** e clique em **Tickets** para abrir as configurações do módulo.
+  </Step>
+  <Step title="Escolha o canal de abertura">
+    Selecione o canal de texto onde o painel de abertura de tickets será enviado. Recomendamos criar um canal dedicado, como `#abrir-ticket`, para facilitar o acesso dos membros.
+  </Step>
+  <Step title="Configure a mensagem e o embed do painel">
+    Personalize o título, a descrição e a cor do embed que aparecerá no canal de abertura. Você também pode adicionar uma imagem de banner e um ícone para tornar o painel mais atrativo.
+  </Step>
+  <Step title="Defina o cargo de suporte">
+    Selecione o cargo ou os cargos que terão acesso a todos os canais de tickets abertos. Membros com esse cargo poderão visualizar, responder, fechar e gerenciar qualquer ticket do servidor.
+  </Step>
+  <Step title="Envie o painel com /ticket painel">
+    Com tudo configurado, use o comando `/ticket painel` no canal escolhido para publicar o painel de abertura. A partir desse momento, qualquer membro poderá abrir um ticket clicando no botão do embed.
+  </Step>
+</Steps>
+
+## Configurações disponíveis
+
+Após a ativação inicial, você pode ajustar as opções abaixo a qualquer momento pelo Dashboard sem precisar reenviar o painel.
+
+| Configuração | Descrição |
+|---|---|
+| **Canal de abertura** | Canal de texto onde o painel de tickets é exibido |
+| **Cargo de suporte** | Cargo(s) com acesso a todos os tickets abertos |
+| **Categoria dos canais** | Categoria do Discord onde os canais de ticket são criados |
+| **Mensagem de boas-vindas** | Texto enviado automaticamente ao abrir um ticket |
+| **Limite por usuário** | Número máximo de tickets abertos por membro simultaneamente |
+| **Razão obrigatória** | Exige que o membro informe o motivo ao abrir o ticket |
+
+## Exemplo de embed do painel
+
+O embed abaixo representa um modelo de configuração para o painel de abertura de tickets. Você pode adaptá-lo livremente pelo Dashboard.
+
+```json
+{
+  "title": "🎫 Central de Suporte",
+  "description": "Precisa de ajuda? Clique no botão abaixo para abrir um ticket.\nNossa equipe responderá o mais breve possível.",
+  "color": "#5865F2",
+  "footer": {
+    "text": "Atlas Bots • Sistema de Tickets"
+  },
+  "thumbnail": {
+    "url": "https://atlasbots.com.br/logo.png"
+  }
+}
+```
+
+<Tip>
+  Personalize o embed com a cor oficial do seu servidor e um ícone temático para criar uma experiência mais imersiva. Embedds bem formatados aumentam a taxa de uso do painel e passam mais profissionalismo aos membros.
+</Tip>
+
+<Warning>
+  O Atlas Bots precisa ter permissão de **Gerenciar Canais** na categoria onde os tickets são criados. Sem essa permissão, o bot não conseguirá criar os canais privados e os membros receberão uma mensagem de erro ao tentar abrir um ticket.
+</Warning>

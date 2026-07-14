@@ -1,0 +1,54 @@
+---
+title: "Transcrições de Tickets: histórico completo de atendimentos"
+sidebarTitle: "Transcrições"
+description: "Salve automaticamente o histórico completo de cada ticket como transcrição em HTML ao fechar, com envio ao canal de logs e ao usuário por DM."
+---
+
+Transcrições são registros completos de tudo o que aconteceu dentro de um ticket: mensagens trocadas, usuários envolvidos, arquivos enviados e horários de cada interação. Ao fechar um ticket, o Atlas Bots gera automaticamente um arquivo HTML que preserva esse histórico com fidelidade visual, permitindo que sua equipe consulte qualquer atendimento passado a qualquer momento — sem depender de prints ou memória.
+
+## Habilitando transcrições
+
+<Steps>
+  <Step title="Acesse as configurações de tickets">
+    No Dashboard, vá até **Sistemas > Tickets** e role a página até a seção **Transcrições**.
+  </Step>
+  <Step title="Ative a opção Salvar transcrições">
+    Habilite o toggle **Salvar transcrições**. A partir desse momento, toda vez que um ticket for fechado, o bot gerará automaticamente um arquivo de histórico.
+  </Step>
+  <Step title="Selecione o canal de logs">
+    Escolha o canal de texto onde as transcrições serão postadas. Recomendamos um canal privado, acessível apenas à equipe de moderação ou administração, como `#logs-tickets`.
+  </Step>
+  <Step title="Ative o envio por DM (opcional)">
+    Se quiser que o usuário também receba uma cópia da transcrição ao final do atendimento, habilite a opção **Enviar transcrição por DM**. O link será enviado automaticamente para a caixa de mensagens diretas do membro.
+  </Step>
+  <Step title="Salve as configurações">
+    Clique em **Salvar** para aplicar as alterações. As configurações entram em vigor imediatamente para os próximos tickets fechados.
+  </Step>
+</Steps>
+
+## Formato da transcrição
+
+As transcrições são geradas em **HTML** e hospedadas nos servidores do Atlas Bots, acessíveis por um link único e permanente. O arquivo reproduz fielmente a aparência do canal do Discord, incluindo avatares, nomes de usuário, formatação de texto (negrito, itálico, código), embeds e miniaturas de imagens.
+
+Cada transcrição é acompanhada de um resumo com os metadados do ticket: quem abriu, quando foi aberto, quando foi fechado, qual categoria foi usada e quantas mensagens foram trocadas.
+
+<Info>
+  O link de transcrição é gerado no momento do fechamento do ticket e postado automaticamente no canal de logs configurado. Você também pode acessá-lo pelo Dashboard em **Sistemas > Tickets > Histórico**, onde todos os tickets fechados ficam listados com seus respectivos links.
+</Info>
+
+<Tip>
+  Use o canal de transcrições como ferramenta de auditoria para revisar a qualidade dos atendimentos da sua equipe. Ao consultar o histórico periodicamente, você identifica padrões de problemas recorrentes, avalia o desempenho dos moderadores e garante que as diretrizes de suporte estão sendo seguidas.
+</Tip>
+
+## Informações contidas na transcrição
+
+A tabela abaixo descreve todas as informações registradas e salvas em cada transcrição gerada pelo Atlas Bots.
+
+| Informação | Descrição |
+|---|---|
+| **Mensagens** | Todo o conteúdo textual trocado no canal do ticket |
+| **Usuários** | Nome de usuário, discriminador e avatar de cada participante |
+| **Data e hora** | Timestamp completo de cada mensagem enviada |
+| **Arquivos** | Links para imagens, documentos e outros arquivos enviados |
+| **Embeds** | Reprodução visual de embeds postados no canal |
+| **Metadados do ticket** | ID do ticket, categoria, data de abertura e de fechamento |

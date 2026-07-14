@@ -1,0 +1,104 @@
+---
+title: "Logs de Moderação: monitore tudo no seu servidor"
+sidebarTitle: "Logs"
+description: "Configure canais de log para acompanhar mensagens deletadas, punições, entradas, saídas e outras ações importantes no seu servidor Discord."
+---
+
+Manter um histórico claro do que acontece no servidor é fundamental para uma moderação justa e transparente. O sistema de logs do Atlas Bots registra automaticamente eventos como mensagens deletadas, punições aplicadas, alterações de cargos, entradas e saídas de membros, além de mudanças na estrutura do servidor. Todas as ocorrências são enviadas em tempo real para o canal de log que você definir, com embeds formatados contendo data, hora, autor da ação e detalhes completos do evento.
+
+## Configurando o canal de logs
+
+<Steps>
+  <Step title="Acesse o Dashboard">
+    Entre em [dashboard.atlasbots.com.br](https://dashboard.atlasbots.com.br) com a sua conta Discord.
+  </Step>
+  <Step title="Vá em Moderação > Logs">
+    No menu lateral, expanda **Moderação** e clique em **Logs**. Você verá a lista completa de categorias de eventos disponíveis.
+  </Step>
+  <Step title="Selecione o canal de destino">
+    No campo **Canal de log padrão**, selecione o canal de texto onde os registros serão enviados. Recomendamos criar um canal exclusivo como `#logs-moderação`, visível apenas para a equipe de staff.
+  </Step>
+  <Step title="Escolha quais eventos registrar">
+    Ative ou desative individualmente cada tipo de evento. Você também pode apontar tipos diferentes de eventos para canais distintos — veja a seção **Múltiplos canais de log** abaixo.
+  </Step>
+  <Step title="Salve as configurações">
+    Clique em **Salvar alterações**. O bot começará a registrar os eventos selecionados imediatamente.
+  </Step>
+</Steps>
+
+## Tipos de eventos
+
+A tabela abaixo lista todos os eventos que o sistema de logs do Atlas Bots é capaz de registrar.
+
+| Evento | O que é registrado |
+|---|---|
+| **Mensagens deletadas** | Conteúdo da mensagem, autor, canal e horário da exclusão |
+| **Mensagens editadas** | Conteúdo anterior e novo da mensagem, autor, canal e horário |
+| **Punições aplicadas** | Tipo de punição, moderador responsável, membro punido, motivo e duração |
+| **Membros entrados** | Nome, ID, data de criação da conta e horário de entrada no servidor |
+| **Membros saídos** | Nome, ID, cargos que o membro possuía e horário de saída |
+| **Cargos alterados** | Cargos adicionados ou removidos de um membro, responsável pela alteração |
+| **Canais criados/deletados** | Nome do canal, tipo (texto, voz, fórum), categoria e responsável pela ação |
+| **Bans e unbans** | Membro banido ou desbanido, moderador responsável, motivo registrado |
+
+## Exemplos de log
+
+<Tabs>
+  <Tab title="Mensagem deletada">
+    Quando uma mensagem é deletada — seja pelo autor ou por um moderador — o bot envia um embed como o representado abaixo para o canal de logs.
+
+    ```json
+    {
+      "embeds": [
+        {
+          "title": "🗑️ Mensagem deletada",
+          "color": 16729344,
+          "fields": [
+            { "name": "Autor", "value": "Joãozinho#1234 (ID: 123456789)", "inline": true },
+            { "name": "Canal", "value": "#geral", "inline": true },
+            { "name": "Conteúdo", "value": "Ei, venham ver meu servidor: discord.gg/spam", "inline": false }
+          ],
+          "footer": { "text": "Deletada em 14/07/2025 às 18:42:31 BRT" }
+        }
+      ]
+    }
+    ```
+  </Tab>
+  <Tab title="Punição aplicada">
+    Sempre que um moderador aplica uma punição via comando, o evento é registrado com todos os detalhes no canal de logs de punições.
+
+    ```json
+    {
+      "embeds": [
+        {
+          "title": "🔨 Punição aplicada — Ban",
+          "color": 15548997,
+          "fields": [
+            { "name": "Membro punido", "value": "Spammer#9999 (ID: 987654321)", "inline": true },
+            { "name": "Moderador", "value": "Admin#0001 (ID: 111222333)", "inline": true },
+            { "name": "Motivo", "value": "Spam de links e raid no servidor", "inline": false },
+            { "name": "Duração", "value": "Permanente", "inline": true },
+            { "name": "Protocolo", "value": "#INF-0042", "inline": true }
+          ],
+          "footer": { "text": "Aplicada em 14/07/2025 às 18:45:00 BRT" }
+        }
+      ]
+    }
+    ```
+  </Tab>
+</Tabs>
+
+<Info>
+  Os logs são retidos nos servidores do Atlas Bots por **90 dias** a partir da data do evento. Após esse período, os registros são removidos automaticamente. Se o seu servidor exige auditoria de longo prazo, recomendamos exportar os logs periodicamente pelo Dashboard em **Moderação > Logs > Exportar**.
+</Info>
+
+## Múltiplos canais de log
+
+Para servidores com fluxo intenso de eventos, concentrar todos os logs em um único canal pode dificultar a leitura. O Atlas Bots permite que você direcione cada categoria de evento para um canal diferente. Por exemplo:
+
+- `#logs-mensagens` → Mensagens deletadas e editadas
+- `#logs-membros` → Entradas, saídas e alterações de cargo
+- `#logs-punições` → Bans, unbans e punições aplicadas
+- `#logs-servidor` → Canais criados e deletados
+
+Para configurar canais individuais por categoria, acesse **Moderação > Logs** no Dashboard, expanda a categoria desejada e selecione um canal de destino específico em vez de usar o canal padrão. Categorias sem canal próprio definido continuarão usando o canal de log padrão como fallback.

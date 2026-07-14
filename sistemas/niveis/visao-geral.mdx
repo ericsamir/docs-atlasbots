@@ -1,0 +1,36 @@
+---
+title: "Sistema de Níveis: engaje membros com XP e ranking"
+sidebarTitle: "Visão Geral"
+description: "O sistema de níveis do Atlas Bots recompensa membros ativos com XP por mensagens, com ranking, recompensas de cargo e notificações de nível."
+---
+
+Manter uma comunidade engajada é um dos maiores desafios de qualquer servidor Discord. O sistema de níveis do Atlas Bots resolve isso recompensando automaticamente os membros mais ativos com pontos de experiência (XP) a cada mensagem enviada. Conforme acumulam XP, os membros sobem de nível, aparecem no ranking do servidor e podem ganhar cargos exclusivos como recompensa — criando um ciclo saudável de participação e reconhecimento.
+
+<CardGroup cols={2}>
+  <Card title="Configuração" icon="sliders" href="/sistemas/niveis/configuracao">
+    Ative o sistema, defina multiplicadores, canais ignorados e personalize a mensagem de level-up.
+  </Card>
+  <Card title="Recompensas" icon="trophy" href="/sistemas/niveis/recompensas">
+    Configure cargos automáticos concedidos quando membros atingem determinados níveis.
+  </Card>
+</CardGroup>
+
+## Principais comandos
+
+Estes são os comandos disponíveis para membros e administradores interagirem com o sistema de níveis:
+
+| Comando           | Descrição                                                          |
+| ----------------- | ------------------------------------------------------------------ |
+| `/nivel`          | Exibe o nível atual, XP acumulado e progresso do usuário.          |
+| `/ranking`        | Mostra o ranking dos membros com mais XP no servidor.              |
+| `/xp dar`         | Concede uma quantidade de XP a um membro específico (admin).       |
+| `/xp remover`     | Remove uma quantidade de XP de um membro específico (admin).       |
+| `/xp resetar`     | Zera todo o XP de um membro ou de todos os membros do servidor (admin). |
+
+## Como o XP é calculado
+
+A cada mensagem enviada em um canal válido do servidor, o membro recebe uma quantidade de XP definida aleatoriamente dentro do intervalo configurado no Dashboard (por padrão, entre 15 e 25 XP por mensagem). Para evitar que membros ganhem XP enviando spam, existe um **cooldown** entre os ganhos — durante esse período, mensagens adicionais não geram XP. Administradores podem ajustar tanto o intervalo de XP quanto o tempo de cooldown nas configurações do sistema.
+
+<Note>
+  O ranking do Atlas Bots é **por servidor**: cada servidor tem sua própria tabela de classificação independente. O XP acumulado em um servidor não é transferido nem somado a outros servidores onde o bot esteja presente.
+</Note>

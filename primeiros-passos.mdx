@@ -1,0 +1,49 @@
+---
+title: "Começando com Atlas Bots no seu servidor Discord"
+sidebarTitle: "Primeiros Passos"
+description: "Aprenda como adquirir, adicionar e configurar seu bot Atlas no servidor Discord em poucos minutos com este guia de início rápido."
+---
+
+Este guia cobre tudo o que você precisa para sair do zero e ter o seu bot da Atlas Bots funcionando completamente no seu servidor Discord. Você vai aprender a escolher o bot certo, convidá-lo, acessar o dashboard e habilitar os sistemas que a sua comunidade precisa — sem complicação.
+
+<Steps>
+  <Step title="Escolha seu bot">
+    Acesse a loja da Atlas Bots e navegue pelo catálogo de bots disponíveis. Cada bot possui uma página de detalhes com a lista de sistemas incluídos, capturas de tela e comparativo de planos. Escolha o plano que melhor se encaixa no tamanho e nas necessidades do seu servidor e finalize a compra. Você receberá uma confirmação por e-mail assim que o pagamento for processado.
+  </Step>
+  <Step title="Convide o bot para o servidor">
+    Após a confirmação da compra, acesse o seu painel em `dashboard.atlas-bots.com`. Na página do bot adquirido, clique em **"Convidar Bot"** para gerar o link de convite exclusivo. Ao abrir o link, o Discord solicitará que você selecione o servidor de destino — escolha o servidor correto e clique em **"Autorizar"**. Certifique-se de manter todas as permissões solicitadas marcadas para garantir o funcionamento completo.
+  </Step>
+  <Step title="Acesse o Dashboard">
+    Entre no painel de controle em `dashboard.atlas-bots.com` utilizando o botão **"Entrar com Discord"**. O processo de autenticação é feito de forma segura via OAuth2 do próprio Discord — não criamos senhas separadas. Após o login, você será redirecionado para a tela principal do dashboard.
+  </Step>
+  <Step title="Selecione seu servidor">
+    Na tela inicial do dashboard, você verá a lista de servidores onde você tem permissão de administrador e o bot está presente. Clique no card do servidor que deseja configurar para acessar o painel de controle específico daquele servidor.
+  </Step>
+  <Step title="Configure os sistemas">
+    Com o servidor selecionado, você terá acesso ao menu lateral com todos os sistemas disponíveis. Acesse cada sistema que deseja utilizar, habilite-o pelo botão de ativação e preencha as configurações necessárias, como canais, cargos e mensagens personalizadas. As alterações são salvas automaticamente e entram em vigor em tempo real no seu servidor.
+  </Step>
+</Steps>
+
+<Tip>
+  Use o comando `/ajuda` diretamente no seu servidor Discord para ver a lista completa de comandos disponíveis no bot, organizados por categoria. Cada comando também exibe uma descrição detalhada ao ser executado com o argumento `--info`.
+</Tip>
+
+<Warning>
+  O bot precisa ter as permissões adequadas no servidor para funcionar corretamente. Caso você tenha restringido as permissões durante o convite ou ajustado as configurações de cargo posteriormente, alguns sistemas podem deixar de funcionar. Verifique sempre se o cargo do bot possui as permissões listadas na tabela abaixo.
+</Warning>
+
+## Permissões recomendadas
+
+Conceda as seguintes permissões ao cargo do bot no seu servidor para garantir que todos os sistemas operem sem interrupções:
+
+| Permissão                   | Por que é necessária                                          |
+|-----------------------------|---------------------------------------------------------------|
+| Gerenciar Cargos            | Atribuir cargos de nível e punições de mute                  |
+| Gerenciar Canais            | Criar canais de tickets automaticamente                       |
+| Banir Membros               | Executar punições de ban via moderação                        |
+| Expulsar Membros            | Executar punições de kick via moderação                       |
+| Ler Histórico de Mensagens  | Analisar mensagens para auto-moderação e logs                 |
+| Gerenciar Mensagens         | Apagar mensagens infratoras e limpar canais                   |
+| Enviar Mensagens            | Responder a comandos e enviar notificações nos canais         |
+| Incorporar Links            | Exibir cards e embeds de resposta dos comandos                |
+| Conectar / Falar            | Entrar e reproduzir áudio nos canais de voz (sistema música)  |

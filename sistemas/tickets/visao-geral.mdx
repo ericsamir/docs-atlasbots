@@ -1,0 +1,39 @@
+---
+title: "Sistema de Tickets: suporte organizado no Discord"
+sidebarTitle: "Visão Geral"
+description: "O sistema de tickets do Atlas Bots cria canais privados de suporte automaticamente, com categorias, transcrições e controle total para sua equipe."
+---
+
+O sistema de tickets do Atlas Bots permite que membros do seu servidor abram solicitações de suporte diretamente pelo Discord. Ao interagir com o painel de abertura, um canal privado é criado automaticamente — visível apenas ao membro e à sua equipe —, centralizando cada atendimento de forma organizada, rastreável e sem poluir os canais públicos do servidor.
+
+<CardGroup cols={2}>
+  <Card title="Configuração" icon="gear" href="/sistemas/tickets/configuracao">
+    Aprenda a ativar o sistema, configurar o painel de abertura, definir cargos de suporte e personalizar o comportamento dos tickets.
+  </Card>
+  <Card title="Categorias" icon="folder-open" href="/sistemas/tickets/categorias">
+    Crie múltiplas categorias para separar tipos de atendimento como suporte, compras e parcerias, cada uma com equipe própria.
+  </Card>
+  <Card title="Transcrições" icon="file-lines" href="/sistemas/tickets/transcricoes">
+    Salve o histórico completo de cada ticket em HTML ao fechar, com envio automático ao canal de logs e ao usuário por DM.
+  </Card>
+  <Card title="Dashboard" icon="table-columns" href="https://atlasbots.com.br/dashboard">
+    Gerencie todas as configurações do sistema de tickets pelo painel web do Atlas Bots.
+  </Card>
+</CardGroup>
+
+## Comandos de tickets
+
+A tabela abaixo lista todos os comandos slash disponíveis para gerenciar tickets no seu servidor. Alguns comandos são restritos à equipe de suporte; outros podem ser usados pelo próprio membro que abriu o ticket.
+
+| Comando | Descrição | Quem pode usar |
+|---|---|---|
+| `/ticket abrir` | Abre um novo ticket manualmente, sem usar o painel | Qualquer membro |
+| `/ticket fechar` | Fecha o ticket atual, gerando transcrição se ativada | Suporte e dono do ticket |
+| `/ticket adicionar` | Adiciona um usuário ao canal do ticket em andamento | Equipe de suporte |
+| `/ticket remover` | Remove um usuário do canal do ticket em andamento | Equipe de suporte |
+| `/ticket reabrir` | Reabre um ticket previamente fechado | Equipe de suporte |
+| `/ticket apagar` | Apaga permanentemente o canal do ticket | Equipe de suporte |
+
+<Note>
+  Cada ticket cria um canal privado exclusivo no seu servidor, visível apenas ao membro que o abriu e aos usuários que possuem o cargo de suporte configurado. Nenhum outro membro consegue ver ou interagir com o atendimento em andamento.
+</Note>

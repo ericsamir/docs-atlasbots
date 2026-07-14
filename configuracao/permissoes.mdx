@@ -1,0 +1,66 @@
+---
+title: "Permissões do bot: configure quem pode usar o quê"
+sidebarTitle: "Permissões"
+description: "Configure quais cargos e usuários têm acesso a cada comando do Atlas Bots, com controle granular por módulo, cargo e canal do servidor Discord."
+---
+
+O sistema de permissões do Atlas Bots permite que você defina com precisão quem pode executar cada comando no seu servidor. Em vez de liberar tudo para todos ou restringir demais, você configura o acesso por módulo, comando, cargo ou até usuário individual — garantindo que cada pessoa tenha exatamente o nível de controle que merece.
+
+## Níveis de acesso
+
+O Atlas Bots trabalha com cinco níveis hierárquicos de acesso padrão. Você pode personalizar quais cargos do seu servidor correspondem a cada nível:
+
+| Nível | Acesso padrão |
+|---|---|
+| **Administrador do Servidor** | Acesso total a todos os comandos, sem exceção |
+| **Cargo de Moderador** | Acesso a comandos de moderação definidos pelo administrador |
+| **Cargo de DJ** | Acesso exclusivo a comandos de controle de música |
+| **Cargo de Suporte** | Acesso a comandos de abertura e gerenciamento de tickets |
+| **Membro** | Acesso apenas aos comandos marcados como públicos |
+
+## Como configurar permissões por comando
+
+<Steps>
+  <Step title="Acesse a área de permissões">
+    No dashboard, vá em **Configurações → Permissões**.
+  </Step>
+  <Step title="Selecione o módulo">
+    Escolha o módulo cujos comandos você deseja configurar: **Moderação**, **Tickets**, **Economia**, **Música**, entre outros.
+  </Step>
+  <Step title="Selecione o comando">
+    Dentro do módulo, clique no comando específico que deseja restringir ou liberar (por exemplo, `/ban`, `/warn` ou `/queue`).
+  </Step>
+  <Step title="Adicione cargos ou usuários">
+    No painel de permissões do comando, clique em **"Adicionar cargo"** ou **"Adicionar usuário"** e selecione quem terá acesso.
+  </Step>
+  <Step title="Configure herança de cargos">
+    Ative a opção **"Herdar permissões de cargos superiores"** caso queira que administradores e moderadores também herdem automaticamente o acesso configurado para cargos abaixo deles na hierarquia.
+  </Step>
+  <Step title="Salve as configurações">
+    Clique em **"Salvar"** para aplicar as alterações. As novas permissões entram em vigor imediatamente, sem necessidade de reiniciar o bot.
+  </Step>
+</Steps>
+
+## Restrição por canal
+
+Além de restringir por cargo, você pode limitar a execução de comandos a canais específicos do servidor. Isso é útil para, por exemplo, concentrar comandos de música em um canal `#música` ou comandos de economia em `#economia`.
+
+Para configurar a restrição por canal, acesse **Configurações → Permissões**, selecione o comando desejado e, na seção **"Canais permitidos"**, adicione os canais onde o comando poderá ser usado. Qualquer tentativa de uso fora desses canais será bloqueada pelo bot com uma mensagem informativa.
+
+<Warning>
+  As permissões do Discord têm prioridade sobre as permissões configuradas no Atlas Bots. Se um usuário não tiver acesso de **visualização ou envio de mensagens** em um canal, ele não conseguirá usar comandos nesse canal — mesmo que o cargo dele esteja liberado nas configurações do bot.
+</Warning>
+
+## Perguntas frequentes
+
+<Accordion title="Como dou acesso a moderação para um cargo específico?">
+  Acesse **Dashboard → Configurações → Permissões** e selecione o módulo **Moderação**. Para cada comando que deseja liberar (por exemplo, `/kick`, `/ban`, `/warn`), clique no comando e adicione o cargo desejado na lista de cargos permitidos. Você pode fazer isso para todos os comandos de uma vez usando o botão **"Aplicar cargo a todo o módulo"**, disponível no topo da página do módulo.
+</Accordion>
+
+<Accordion title="Posso bloquear um comando para um usuário específico?">
+  Sim. Nas configurações de permissão de qualquer comando, além de adicionar cargos, você pode adicionar **usuários individuais** à lista de permitidos ou à lista de bloqueados. Um usuário na lista de bloqueados não conseguirá usar o comando mesmo que possua um cargo que normalmente teria acesso.
+</Accordion>
+
+<Accordion title="As permissões funcionam com slash commands?">
+  Sim, o sistema de permissões do Atlas Bots se aplica tanto aos comandos de prefixo (como `!ban`) quanto aos slash commands (como `/ban`). No entanto, lembre-se de que o Discord também possui seu próprio sistema nativo de permissões para slash commands, acessível em **Configurações do Servidor → Integrações**. Os dois sistemas funcionam de forma independente — o bot só executa um comando se ambos os sistemas permitirem.
+</Accordion>
