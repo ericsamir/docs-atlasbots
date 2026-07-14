@@ -1,5 +1,5 @@
 ---
-title: "Permissões do bot: configure quem pode usar o quê"
+title: "Permissões do bot: controle quem pode usar cada comando"
 sidebarTitle: "Permissões"
 description: "Configure quais cargos e usuários têm acesso a cada comando do Atlas Bots, com controle granular por módulo, cargo e canal do servidor Discord."
 ---
@@ -53,14 +53,16 @@ Para configurar a restrição por canal, acesse **Configurações → Permissõe
 
 ## Perguntas frequentes
 
-<Accordion title="Como dou acesso a moderação para um cargo específico?">
-  Acesse **Dashboard → Configurações → Permissões** e selecione o módulo **Moderação**. Para cada comando que deseja liberar (por exemplo, `/kick`, `/ban`, `/warn`), clique no comando e adicione o cargo desejado na lista de cargos permitidos. Você pode fazer isso para todos os comandos de uma vez usando o botão **"Aplicar cargo a todo o módulo"**, disponível no topo da página do módulo.
-</Accordion>
+<AccordionGroup>
+  <Accordion title="Como dou acesso a moderação para um cargo específico?">
+    Acesse **Dashboard → Configurações → Permissões** e selecione o módulo **Moderação**. Para cada comando que deseja liberar (por exemplo, `/kick`, `/ban`, `/warn`), clique no comando e adicione o cargo desejado na lista de cargos permitidos. Você pode fazer isso para todos os comandos de uma vez usando o botão **"Aplicar cargo a todo o módulo"**, disponível no topo da página do módulo.
+  </Accordion>
 
-<Accordion title="Posso bloquear um comando para um usuário específico?">
-  Sim. Nas configurações de permissão de qualquer comando, além de adicionar cargos, você pode adicionar **usuários individuais** à lista de permitidos ou à lista de bloqueados. Um usuário na lista de bloqueados não conseguirá usar o comando mesmo que possua um cargo que normalmente teria acesso.
-</Accordion>
+  <Accordion title="Posso bloquear um comando para um usuário específico?">
+    Sim. Nas configurações de permissão de qualquer comando, além de adicionar cargos, você pode adicionar **usuários individuais** à lista de permitidos ou à lista de bloqueados. Um usuário na lista de bloqueados não conseguirá usar o comando mesmo que possua um cargo que normalmente teria acesso.
+  </Accordion>
 
-<Accordion title="As permissões funcionam com slash commands?">
-  Sim, o sistema de permissões do Atlas Bots se aplica tanto aos comandos de prefixo (como `!ban`) quanto aos slash commands (como `/ban`). No entanto, lembre-se de que o Discord também possui seu próprio sistema nativo de permissões para slash commands, acessível em **Configurações do Servidor → Integrações**. Os dois sistemas funcionam de forma independente — o bot só executa um comando se ambos os sistemas permitirem.
-</Accordion>
+  <Accordion title="As permissões funcionam com slash commands?">
+    Sim, o sistema de permissões do Atlas Bots se aplica tanto aos comandos de prefixo (como `!ban`) quanto aos slash commands (como `/ban`). No entanto, lembre-se de que o Discord também possui seu próprio sistema nativo de permissões para slash commands, acessível em **Configurações do Servidor → Integrações**. Os dois sistemas funcionam de forma independente — o bot só executa um comando se ambos os sistemas permitirem.
+  </Accordion>
+</AccordionGroup>

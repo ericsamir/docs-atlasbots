@@ -1,5 +1,5 @@
 ---
-title: "Punições: ban, kick, mute e warn no Discord"
+title: "Punições: ban, kick, mute e warn no seu servidor Discord"
 sidebarTitle: "Punições"
 description: "Use os comandos de punição do Atlas Bots para banir, kickar, mutar e advertir membros do seu servidor Discord com registro completo de histórico."
 ---
@@ -12,7 +12,7 @@ O sistema de punições do Atlas Bots centraliza todas as ações disciplinares 
 
 Bane um membro do servidor de forma temporária ou permanente. Ao banir com duração definida, o membro é desbanido automaticamente quando o período expira.
 
-```
+```bash
 /ban usuário:@Spammer#9999 motivo:"Raid no servidor" duração:7d
 ```
 
@@ -22,7 +22,7 @@ Bane um membro do servidor de forma temporária ou permanente. Ao banir com dura
 
 Remove o banimento de um usuário que estava impedido de entrar no servidor. É necessário informar o ID do usuário, pois ele já não é mais membro.
 
-```
+```bash
 /unban usuário:987654321
 ```
 
@@ -32,7 +32,7 @@ Remove o banimento de um usuário que estava impedido de entrar no servidor. É 
 
 Expulsa um membro do servidor sem aplicar banimento. O usuário pode entrar novamente por meio de um convite válido.
 
-```
+```bash
 /kick usuário:@Troll#0001 motivo:"Comportamento inadequado reiterado"
 ```
 
@@ -42,7 +42,7 @@ Expulsa um membro do servidor sem aplicar banimento. O usuário pode entrar nova
 
 Silencia um membro nos canais de texto pelo período definido, impedindo que ele envie mensagens ou reaja a elas. Utiliza o cargo de mudo gerenciado pelo Atlas Bots.
 
-```
+```bash
 /mute usuário:@Flood#1234 duração:1h motivo:"Flood no canal geral"
 ```
 
@@ -52,7 +52,7 @@ Silencia um membro nos canais de texto pelo período definido, impedindo que ele
 
 Remove o silenciamento de um membro antes que o período expire, caso o contexto tenha mudado.
 
-```
+```bash
 /unmute usuário:@Flood#1234
 ```
 
@@ -62,7 +62,7 @@ Remove o silenciamento de um membro antes que o período expire, caso o contexto
 
 Aplica o timeout nativo do Discord, que impede o membro de enviar mensagens, reagir, entrar em canais de voz e interagir com o servidor pelo período especificado. Não requer configuração de cargo adicional.
 
-```
+```bash
 /timeout usuário:@Briguento#5678 duração:30m motivo:"Discussão acalorada — resfriamento"
 ```
 
@@ -72,7 +72,7 @@ Aplica o timeout nativo do Discord, que impede o membro de enviar mensagens, rea
 
 Registra uma advertência formal no histórico do membro. O usuário recebe uma notificação por DM com o motivo da advertência e o identificador do protocolo gerado.
 
-```
+```bash
 /warn usuário:@Novato#4321 motivo:"Uso de linguagem imprópria (1ª ocorrência)"
 ```
 
@@ -82,7 +82,7 @@ Registra uma advertência formal no histórico do membro. O usuário recebe uma 
 
 Exibe o histórico completo de punições de um membro, incluindo warns, mutes, kicks e bans anteriores, com data, moderador responsável e motivo de cada ocorrência.
 
-```
+```bash
 /infrações usuário:@Novato#4321
 ```
 
@@ -92,7 +92,7 @@ Exibe o histórico completo de punições de um membro, incluindo warns, mutes, 
 
 Remove uma advertência específica do histórico de um membro a partir do ID do protocolo. Útil para corrigir advertências aplicadas por engano.
 
-```
+```bash
 /remover-infração id:INF-0017
 ```
 
@@ -102,7 +102,7 @@ Remove uma advertência específica do histórico de um membro a partir do ID do
 
 Apaga em massa mensagens de um canal. Você pode limpar as últimas N mensagens ou filtrar por usuário. O Discord limita a exclusão em massa a mensagens com até **14 dias** de idade.
 
-```
+```bash
 /clear quantidade:50
 /clear quantidade:20 usuário:@Spammer#9999
 ```
